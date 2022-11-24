@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="ControlDeviceFooterView" customModule="DemoX" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="405" height="173"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pV-Ug-5Ew">
+                    <rect key="frame" x="0.0" y="0.0" width="405" height="173"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cha" translatesAutoresizingMaskIntoConstraints="NO" id="Ncc-a9-n3z">
+                            <rect key="frame" x="24" y="54.666666666666657" width="64" height="64"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="64" id="696-Rc-82j"/>
+                                <constraint firstAttribute="height" constant="64" id="HXx-A1-0nd"/>
+                            </constraints>
+                        </imageView>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vcl-nq-BFX" customClass="SettingSwitch" customModule="DemoX" customModuleProvider="target">
+                            <rect key="frame" x="332" y="71" width="51" height="31"/>
+                        </switch>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rvn-9A-e6d">
+                            <rect key="frame" x="0.0" y="10" width="405" height="1"/>
+                            <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="2Za-Ta-SPV"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="j7J-sX-HgS">
+                            <rect key="frame" x="99.999999999999986" y="31.666666666666671" width="139.66666666666663" height="110.00000000000001"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên loại thiết bị" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9l-gm-q8V">
+                                    <rect key="frame" x="0.0" y="0.0" width="117.33333333333333" height="19.333333333333332"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quá định mức 30kWh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URg-La-Qxw">
+                                    <rect key="frame" x="0.0" y="34.333333333333329" width="139.66666666666666" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.14117647059999999" green="0.19215686269999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0Ua-Pr-JGX">
+                                    <rect key="frame" x="0.0" y="66.333333333333329" width="106.33333333333333" height="14.333333333333329"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Thiết lập" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Coe-L6-daQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="49.333333333333336" height="14.333333333333334"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.14117647059999999" green="0.19215686269999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=": 32KWH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eih-cS-aux">
+                                            <rect key="frame" x="54.333333333333343" y="0.0" width="52" height="14.333333333333334"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.47058823529999999" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KTv-xu-uG6">
+                                    <rect key="frame" x="0.0" y="95.666666666666657" width="106.33333333333333" height="14.333333333333329"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Tiêu thụ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tx7-gN-1uw">
+                                            <rect key="frame" x="0.0" y="0.0" width="46.333333333333336" height="14.333333333333334"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.14117647059999999" green="0.19215686269999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=": 32KWH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMC-r2-JOB">
+                                            <rect key="frame" x="54.333333333333343" y="0.0" width="52" height="14.333333333333334"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.47058823529999999" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="j7J-sX-HgS" firstAttribute="centerY" secondItem="Ncc-a9-n3z" secondAttribute="centerY" id="1qi-64-TID"/>
+                        <constraint firstItem="Ncc-a9-n3z" firstAttribute="centerY" secondItem="4pV-Ug-5Ew" secondAttribute="centerY" id="7qy-zi-Uia"/>
+                        <constraint firstItem="Rvn-9A-e6d" firstAttribute="leading" secondItem="4pV-Ug-5Ew" secondAttribute="leading" id="Arc-kG-awv"/>
+                        <constraint firstItem="vcl-nq-BFX" firstAttribute="centerY" secondItem="j7J-sX-HgS" secondAttribute="centerY" id="F09-od-0Ka"/>
+                        <constraint firstAttribute="trailing" secondItem="Rvn-9A-e6d" secondAttribute="trailing" id="Hf3-aL-GTB"/>
+                        <constraint firstItem="j7J-sX-HgS" firstAttribute="leading" secondItem="Ncc-a9-n3z" secondAttribute="trailing" constant="12" id="TXb-bv-LEi"/>
+                        <constraint firstItem="Rvn-9A-e6d" firstAttribute="top" secondItem="4pV-Ug-5Ew" secondAttribute="top" constant="10" id="daf-hH-eTE"/>
+                        <constraint firstAttribute="trailing" secondItem="vcl-nq-BFX" secondAttribute="trailing" constant="24" id="m15-bk-Zen"/>
+                        <constraint firstItem="Ncc-a9-n3z" firstAttribute="leading" secondItem="4pV-Ug-5Ew" secondAttribute="leading" constant="24" id="sgZ-JQ-ckc"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="4pV-Ug-5Ew" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="EVF-Ts-B5I"/>
+                <constraint firstAttribute="bottom" secondItem="4pV-Ug-5Ew" secondAttribute="bottom" id="hYU-cc-Us8"/>
+                <constraint firstItem="4pV-Ug-5Ew" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="hZt-hK-yaN"/>
+                <constraint firstAttribute="trailing" secondItem="4pV-Ug-5Ew" secondAttribute="trailing" id="pdp-pS-FcG"/>
+            </constraints>
+            <point key="canvasLocation" x="119.84732824427481" y="63.028169014084511"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="ic_cha" width="64" height="64"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
