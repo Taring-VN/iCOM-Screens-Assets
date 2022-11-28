@@ -6,15 +6,23 @@
 //
 
 import UIKit
+import iCOM_Service
 
-class TurnDeviceVC: BaseVC {
+class TurnDeviceVC: BaseVC, SetTimeDelegate {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var turnTableView: UITableView!
+    var arrTime = [String]()
+    
+    var mockData = [TurnData]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        mockData.removeAll()
 
-        // Do any additional setup after loading the view.
+        arrTime = StoreData.shared.getTime() ?? [String]()
+        mockData.append(TurnData(name: "Tắt thiết bị", isSelected: true))
+        mockData.append(TurnData(name: "Bật thiết bị", isSelected: false))
     }
 
     override func setUpViews() {
@@ -53,15 +61,19 @@ class TurnDeviceVC: BaseVC {
         containerView.layer.mask = maskLayer
     }
     
-    var mockData: [TurnData] {
-        var datas = [TurnData]()
-        datas.append(TurnData(name: "Tắt thiết bị", isSelected: true))
-        datas.append(TurnData(name: "Bật thiết bị", isSelected: false))
+    func handleSetTime(time: String) {
+        arrTime.append(time)
+        StoreData.shared.saveTime(arrTime)
+        mockData[0].isSelected = false
+        mockData[1].isSelected = true
         
-        return datas
+        DispatchQueue.main.async {
+            self.turnTableView.reloadData()
+        }
     }
 
 }
+
 extension TurnDeviceVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         mockData.count
@@ -78,9 +90,19 @@ extension TurnDeviceVC: UITableViewDelegate, UITableViewDataSource {
         60
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 1 {
+            let vc = AleartSetTimeViewController()
+            vc.delegate = self
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .overCurrentContext
+            present(vc, animated: false)
+        }
+    }
     
 }
+
 struct TurnData {
     let name: String
-    let isSelected: Bool
+    var isSelected: Bool
 }

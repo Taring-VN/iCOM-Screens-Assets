@@ -8,7 +8,7 @@
 import UIKit
 import iCOM_Service
 
-class ControlDeviceVC: BaseVC, ControlDeviceDelegate {
+class ControlDeviceVC: BaseVC, ControlDeviceDelegate, ControlDeviceCellDelegate {
     
     private let viewModel = ControlDeviceViewModel()
     
@@ -66,7 +66,9 @@ class ControlDeviceVC: BaseVC, ControlDeviceDelegate {
         let vc = ListAlarmVC()
         navigationController?.pushViewController(vc, animated: true)
     }
-
+    
+    func handleSwitchAction(_ tag: Int) {
+    }
 }
 
 extension ControlDeviceVC: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -83,7 +85,6 @@ extension ControlDeviceVC: UICollectionViewDataSource, UICollectionViewDelegate 
             
             header.cellDelegate = self
             header.alarmBtn.tag = indexPath.row
-            
             header.powerConsumptionLabel.text = "\(viewModel.powerConsum) kWh"
             
             return header
@@ -107,6 +108,8 @@ extension ControlDeviceVC: UICollectionViewDataSource, UICollectionViewDelegate 
             return UICollectionViewCell()
         }
         
+        cell.cellDelegate = self
+        
         if let item = StoreData.shared.getListItems()?[indexPath.row] {
             cell.bindView(item: item)
         }
@@ -119,7 +122,7 @@ extension ControlDeviceVC: UICollectionViewDataSource, UICollectionViewDelegate 
     
     @objc
     func switchTriggered(sender: AnyObject) {
-
+        
         let switchOnOff = sender as! UISwitch
         let deviceSelected = arrItems[switchOnOff.tag]
         
@@ -128,8 +131,6 @@ extension ControlDeviceVC: UICollectionViewDataSource, UICollectionViewDelegate 
         arrItems[switchOnOff.tag].status = !(deviceSelected.status ?? false)
         
         StoreData.shared.setListItems(dictData: arrItems)
-        
-        print(StoreData.shared.getListItems())
     }
 
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -169,5 +170,3 @@ extension ControlDeviceVC: UICollectionViewDelegateFlowLayout {
             return CGSize(width: collectionView.frame.width, height: 180) //add your height here
         }
 }
-
-

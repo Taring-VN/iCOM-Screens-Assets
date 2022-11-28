@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ControlDeviceCell" customModule="DemoX" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ControlDeviceCell" customModule="MotherApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="176" height="106"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -38,6 +37,9 @@
                                     <constraint firstAttribute="height" constant="24" id="5QR-lD-Bcp"/>
                                     <constraint firstAttribute="width" constant="44" id="GyB-Ai-u4A"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="onOffAction:" destination="gTV-IL-0wX" eventType="valueChanged" id="tN3-DQ-VIY"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" white="0.94184117884069052" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,7 +64,7 @@
             </constraints>
             <size key="customSize" width="176" height="106"/>
             <connections>
-                <outlet property="onOffDevice" destination="iYG-X6-9k9" id="oCV-db-mQu"/>
+                <outlet property="onOffDevice" destination="iYG-X6-9k9" id="A5u-c9-NME"/>
                 <outlet property="subTitle" destination="Obq-3N-dF1" id="ElT-2m-RoN"/>
                 <outlet property="title" destination="4BF-ZH-Cpp" id="13t-Qy-P5B"/>
             </connections>

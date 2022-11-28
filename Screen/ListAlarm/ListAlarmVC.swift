@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import iCOM_Service
 
 class ListAlarmVC: BaseVC {
 
@@ -13,8 +14,21 @@ class ListAlarmVC: BaseVC {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var listAlarmTableView: UITableView!
+    
+    var timeArr = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        timeArr = StoreData.shared.getTime() ?? [String]()
+        DispatchQueue.main.async {
+            self.listAlarmTableView.reloadData()
+        }
     }
     
     @IBAction func addAction(_ sender: Any) {
@@ -78,13 +92,17 @@ class ListAlarmVC: BaseVC {
 }
 extension ListAlarmVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        mockData.count
+        timeArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AlarmInfoItemCell.self)) as? AlarmInfoItemCell
         else { return UITableViewCell() }
-        cell.fillData(model: mockData[indexPath.row])
+        
+        cell.timeLb.text = timeArr[indexPath.row]
+        cell.daysLb.text = "FRI, TUE, SAT"
+        cell.detailLb.text = "HPD Journey Mapping Workshop"
+        
         return cell
     }
     
@@ -94,6 +112,7 @@ extension ListAlarmVC: UITableViewDelegate, UITableViewDataSource {
     
     
 }
+
 struct AlarmInfo: Codable {
     let time: String
     let detail: String

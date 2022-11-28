@@ -2,14 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="DemoX" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MotherApp" customModuleProvider="target">
             <connections>
                 <outlet property="consumePower" destination="ziN-gN-hqo" id="kkq-vr-w7T"/>
                 <outlet property="containerView" destination="ojm-NP-03k" id="ath-6O-2XT"/>
@@ -115,7 +114,7 @@
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wVc-On-MN1" customClass="DesignableTextField" customModule="DemoX" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wVc-On-MN1" customClass="DesignableTextField" customModule="MotherApp" customModuleProvider="target">
                             <rect key="frame" x="55.333333333333343" y="293.33333333333331" width="120" height="34"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="120" id="IKO-le-OmP"/>
@@ -132,7 +131,7 @@
                                 <action selector="textField1:" destination="-1" eventType="editingDidEnd" id="wwS-Sd-Fow"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3rO-nj-L0e" customClass="DesignableTextField" customModule="DemoX" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3rO-nj-L0e" customClass="DesignableTextField" customModule="MotherApp" customModuleProvider="target">
                             <rect key="frame" x="230" y="293.33333333333331" width="120" height="34"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="120" id="pLN-gk-IUL"/>
@@ -261,10 +260,10 @@
     </objects>
     <designables>
         <designable name="3rO-nj-L0e">
-            <size key="intrinsicContentSize" width="32" height="34"/>
+            <size key="intrinsicContentSize" width="-7.5218572430675899e+180" height="34"/>
         </designable>
         <designable name="wVc-On-MN1">
-            <size key="intrinsicContentSize" width="32" height="34"/>
+            <size key="intrinsicContentSize" width="-7.5218572430675899e+180" height="34"/>
         </designable>
     </designables>
     <resources>
