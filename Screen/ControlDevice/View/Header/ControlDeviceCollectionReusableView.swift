@@ -42,19 +42,19 @@ class ControlDeviceCollectionReusableView: UICollectionReusableView {
         addDeviceBtn.setTitle("", for: .disabled)
         addDeviceBtn.setTitle("", for: .highlighted)
         addDeviceBtn.setTitle("", for: .selected)
-        addDeviceBtn.setImage(UIImage(named: "ic_plus"), for: .normal)
+        addDeviceBtn.setImage(UIImage(named: "ic_plus_iot"), for: .normal)
         
         alarmBtn.setTitle("", for: .normal)
         alarmBtn.setTitle("", for: .disabled)
         alarmBtn.setTitle("", for: .highlighted)
         alarmBtn.setTitle("", for: .selected)
-        alarmBtn.setImage(UIImage(named: "ic_clock"), for: .normal)
+        alarmBtn.setImage(UIImage(named: "ic_clock_iot"), for: .normal)
         
         warningBtn.setTitle("", for: .normal)
         warningBtn.setTitle("", for: .disabled)
         warningBtn.setTitle("", for: .highlighted)
         warningBtn.setTitle("", for: .selected)
-        warningBtn.setImage(UIImage(named: "ic_ring"), for: .normal)
+        warningBtn.setImage(UIImage(named: "ic_ring_iot"), for: .normal)
     }
     
     override func draw(_ rect: CGRect) {

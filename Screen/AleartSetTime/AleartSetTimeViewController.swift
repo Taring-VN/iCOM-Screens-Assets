@@ -39,6 +39,7 @@ class AleartSetTimeViewController: BaseVC {
     }
     
     @IBAction func setTime(_ sender: Any) {
+        doneButtonPressed()
         delegate?.handleSetTime(time: powerTextField.text ?? "")
         dismiss(animated: true)
     }
@@ -68,9 +69,12 @@ class AleartSetTimeViewController: BaseVC {
     @objc func doneButtonPressed() {
         if let  datePicker = self.powerTextField.inputView as? UIDatePicker {
             let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale.init(identifier: "vi_VN")
+            dateFormatter.dateFormat = "HH:mm"
             dateFormatter.timeStyle = .short
             dateFormatter.dateStyle = .none
-            self.powerTextField.text = dateFormatter.string(from: datePicker.date)
+            let dateSet = dateFormatter.string(from: datePicker.date)
+            self.powerTextField.text = dateSet
         }
         self.powerTextField.resignFirstResponder()
      }

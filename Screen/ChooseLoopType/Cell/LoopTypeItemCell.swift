@@ -34,27 +34,27 @@ class LoopTypeItemCell: UITableViewCell {
     func fillData(model: LoopData) {
         dayLb.text = model.day
         if model.isSelected {
-            selectBtn.setImage(UIImage(named: "ic_selected"), for: .normal)
+            selectBtn.setImage(UIImage(named: "ic_selected_iot"), for: .normal)
         } else {
-            selectBtn.setImage(UIImage(named: "ic_unselected"), for: .normal)
+            selectBtn.setImage(UIImage(named: "ic_unselected_iot"), for: .normal)
         }
     }
     
     func fillData(model: TurnData) {
         dayLb.text = model.name
         if model.isSelected {
-            selectBtn.setImage(UIImage(named: "ic_radio_selected"), for: .normal)
+            selectBtn.setImage(UIImage(named: "ic_radio_selected_iot"), for: .normal)
         } else {
-            selectBtn.setImage(UIImage(named: "ic_radio_unselected"), for: .normal)
+            selectBtn.setImage(UIImage(named: "ic_radio_unselected_iot"), for: .normal)
         }
     }
     
     func fillData(model: DeviceInfo) {
         dayLb.text = model.name
         if model.isSelected {
-            selectBtn.setImage(UIImage(named: "ic_selected"), for: .normal)
+            selectBtn.setImage(UIImage(named: "ic_selected_iot"), for: .normal)
         } else {
-            selectBtn.setImage(UIImage(named: "ic_unselected"), for: .normal)
+            selectBtn.setImage(UIImage(named: "ic_unselected_iot"), for: .normal)
         }
     }
     

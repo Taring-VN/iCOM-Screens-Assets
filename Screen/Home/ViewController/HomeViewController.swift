@@ -41,7 +41,7 @@ class HomeViewController: BaseVC, MyDataSendingDelegateProtocol {
     }
     
     func sendDataToFirstViewController(myData: String) {
-        consumePower.text = "\(myData) KWH"
+        consumePower.text = "\(myData) kWh"
     }
     
     private lazy var datePicker1: UIDatePicker = {
@@ -58,20 +58,6 @@ class HomeViewController: BaseVC, MyDataSendingDelegateProtocol {
       return datePicker
     }()
     
-    @IBOutlet weak var txt1: DesignableTextField!
-    
-    @IBOutlet weak var txt2: DesignableTextField!
-    
-    @IBAction func textField1(_ sender: UITextField) {
-        txt1.inputView = datePicker1
-        datePicker1.addTarget(self, action: #selector(datePickerFromValueChanged1), for: .valueChanged)
-    }
-    
-    @IBAction func textField2(_ sender: UITextField) {
-        txt2.inputView = datePicker2
-        datePicker2.addTarget(self, action: #selector(datePickerFromValueChanged2), for: .valueChanged)
-    }
-    
     @IBAction func presentView(_ sender: Any) {
         let vc = ListAlarmVC()
         navigationController?.pushViewController(vc, animated: true)
@@ -85,31 +71,8 @@ class HomeViewController: BaseVC, MyDataSendingDelegateProtocol {
         
         containerView.backgroundColor = .white
         
-        overPower.text = "\((item.power ?? 90) - (item.powerConsumptionLimited ?? 0)) KWH"
-        
-        txt1.addInputViewDatePicker(target: self, selector: #selector(doneButtonPressed1))
-        txt2.addInputViewDatePicker(target: self, selector: #selector(doneButtonPressed2))
-        
+        overPower.text = "\((item.power ?? 90) - (item.powerConsumptionLimited ?? 0)) kWh"
     }
-    
-    @objc func doneButtonPressed1() {
-        if let  datePicker = self.txt1.inputView as? UIDatePicker {
-            let dateFormatter = DateFormatter()
-            dateFormatter.timeStyle = .medium
-            txt1.text = dateFormatter.string(from: datePicker.date)
-            print(dateFormatter.string(from: datePicker.date))
-        }
-        self.txt1.resignFirstResponder()
-     }
-    
-    @objc func doneButtonPressed2() {
-        if let  datePicker = self.txt2.inputView as? UIDatePicker {
-            let dateFormatter = DateFormatter()
-            dateFormatter.timeStyle = .medium
-            self.txt2.text = dateFormatter.string(from: datePicker.date)
-        }
-        self.txt2.resignFirstResponder()
-     }
     
     override func setupBindings() {
         viewModel.pSLoadingBlockUI.bind { [weak self] isLoading in
@@ -149,19 +112,6 @@ class HomeViewController: BaseVC, MyDataSendingDelegateProtocol {
         maskLayer.path = path.cgPath
         containerView.layer.mask = maskLayer
     }
-    
-    @objc func datePickerFromValueChanged1(sender:UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        txt1.text = dateFormatter.string(from: sender.date)
-    }
-    
-    @objc func datePickerFromValueChanged2(sender:UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        txt2.text = dateFormatter.string(from: sender.date)
-    }
-
 }
 
 extension UITextField {
@@ -173,20 +123,11 @@ extension UITextField {
     //Add DatePicker as inputView
     let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 216))
     datePicker.datePickerMode = .time
+    datePicker.locale = Locale.init(identifier: "vi_VN")
     self.inputView = datePicker
-
-    //Add Tool Bar as input AccessoryView
-    let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 44))
-    let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-    let cancelBarButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelPressed))
-    let doneBarButton = UIBarButtonItem(title: "Done", style: .plain, target: target, action: selector)
-    toolBar.setItems([cancelBarButton, flexibleSpace, doneBarButton], animated: false)
-
-    self.inputAccessoryView = toolBar
  }
 
    @objc func cancelPressed() {
      self.resignFirstResponder()
    }
 }
-

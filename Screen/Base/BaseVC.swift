@@ -62,7 +62,7 @@ class BaseVC: UIViewController {
             return titleView
       }
     
-    func setRightButtonBar(_ image: UIImage? = UIImage(named: "ic_menu")) {
+    func setRightButtonBar(_ image: UIImage? = UIImage(named: "ic_menu_iot")) {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, landscapeImagePhone: image, style: .plain, target: self, action: #selector(clickLeftItem))
     }
 
@@ -70,7 +70,7 @@ class BaseVC: UIViewController {
         
     }
     
-    func setBackButtonBar(_ image: UIImage? = UIImage(named: "ic_back")) {
+    func setBackButtonBar(_ image: UIImage? = UIImage(named: "ic_back_iot")) {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: navigationController, action: #selector(UINavigationController.popViewController(animated:)))
         navigationController?.interactivePopGestureRecognizer?.delegate = self
     }

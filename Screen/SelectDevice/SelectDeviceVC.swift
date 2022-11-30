@@ -58,7 +58,7 @@ class SelectDeviceVC: BaseVC {
         header.dayLb.text = "Tất cả thiết bị"
         header.dayLb.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         header.dayLb.textColor = .black
-        header.selectBtn.setImage(UIImage(named: "ic_select_all"), for: .normal)
+        header.selectBtn.setImage(UIImage(named: "ic_select_all_iot"), for: .normal)
         listDeviceTableView.tableHeaderView = header
         
     }

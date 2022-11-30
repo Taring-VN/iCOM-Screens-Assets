@@ -61,12 +61,12 @@ class AddSchedulerVC: BaseVC {
         addDeviceBtn.setTitle("", for: .disabled)
         addDeviceBtn.setTitle("", for: .highlighted)
         addDeviceBtn.setTitle("", for: .selected)
-        addDeviceBtn.setImage(UIImage(named: "ic_arrow"), for: .normal)
+        addDeviceBtn.setImage(UIImage(named: "ic_arrow_iot"), for: .normal)
         actionBtn.setTitle("", for: .normal)
         actionBtn.setTitle("", for: .disabled)
         actionBtn.setTitle("", for: .highlighted)
         actionBtn.setTitle("", for: .selected)
-        actionBtn.setImage(UIImage(named: "ic_arrow"), for: .normal)
+        actionBtn.setImage(UIImage(named: "ic_arrow_iot"), for: .normal)
         
         
         cancelBtn.setTitle("HỦY BỎ", for: .normal)

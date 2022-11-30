@@ -15,8 +15,6 @@
                 <outlet property="outLetSwitch" destination="zkp-a8-SAA" id="7qL-ZF-dsa"/>
                 <outlet property="overPower" destination="sy1-Kp-Ro8" id="2bJ-Vv-VJq"/>
                 <outlet property="powerView" destination="LgK-Fj-AyE" id="fTF-dG-NZD"/>
-                <outlet property="txt1" destination="wVc-On-MN1" id="RnD-qy-I7N"/>
-                <outlet property="txt2" destination="3rO-nj-L0e" id="zLW-g7-WL0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -85,19 +83,19 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Công suất" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCm-fH-Udu">
-                            <rect key="frame" x="29.999999999999993" y="363.66666666666669" width="87.333333333333314" height="21.666666666666686"/>
+                            <rect key="frame" x="29.999999999999993" y="306.66666666666669" width="87.333333333333314" height="21.666666666666686"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23KWH - 52KWH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TY8-Tc-NB9">
-                            <rect key="frame" x="236.66666666666666" y="366" width="113.33333333333334" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23kWh - 52kWh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TY8-Tc-NB9">
+                            <rect key="frame" x="244.66666666666666" y="309" width="105.33333333333334" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7j1-9I-K6j" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
-                            <rect key="frame" x="30" y="395.33333333333337" width="333" height="30"/>
+                            <rect key="frame" x="30" y="338.33333333333331" width="333" height="30"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="0Om-0g-H4A"/>
@@ -108,59 +106,13 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Từ:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qC7-jX-rAK">
-                            <rect key="frame" x="30" y="301.66666666666669" width="20.333333333333329" height="17"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wVc-On-MN1" customClass="DesignableTextField" customModule="MotherApp" customModuleProvider="target">
-                            <rect key="frame" x="55.333333333333343" y="293.33333333333331" width="120" height="34"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="120" id="IKO-le-OmP"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="arrow-down"/>
-                                <userDefinedRuntimeAttribute type="number" keyPath="padding">
-                                    <real key="value" value="5"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="textField1:" destination="-1" eventType="editingDidEnd" id="wwS-Sd-Fow"/>
-                            </connections>
-                        </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3rO-nj-L0e" customClass="DesignableTextField" customModule="MotherApp" customModuleProvider="target">
-                            <rect key="frame" x="230" y="293.33333333333331" width="120" height="34"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="120" id="pLN-gk-IUL"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="arrow-down"/>
-                                <userDefinedRuntimeAttribute type="number" keyPath="padding">
-                                    <real key="value" value="5"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="textField2:" destination="-1" eventType="editingDidEnd" id="5PX-SS-5Ap"/>
-                            </connections>
-                        </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đến:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMM-13-CBd">
-                            <rect key="frame" x="194.66666666666666" y="301.66666666666669" width="30.333333333333343" height="17"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="-4" translatesAutoresizingMaskIntoConstraints="NO" id="fE9-9D-5rC">
                             <rect key="frame" x="236" y="227" width="132" height="58"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QU-DU-09J">
                                     <rect key="frame" x="0.0" y="0.0" width="68" height="58"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="ic_aleart" title=""/>
+                                    <buttonConfiguration key="configuration" style="plain" image="ic_aleart_iot" title=""/>
                                     <connections>
                                         <action selector="navigateToAleartPower:" destination="-1" eventType="touchUpInside" id="d2O-er-47K"/>
                                     </connections>
@@ -168,7 +120,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LG8-Nz-2LV">
                                     <rect key="frame" x="64" y="0.0" width="68" height="58"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="ic_clock" title=""/>
+                                    <buttonConfiguration key="configuration" style="plain" image="ic_clock_iot" title=""/>
                                     <connections>
                                         <action selector="presentView:" destination="-1" eventType="touchUpInside" id="f5S-bm-P16"/>
                                     </connections>
@@ -178,18 +130,14 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="wVc-On-MN1" firstAttribute="leading" secondItem="qC7-jX-rAK" secondAttribute="trailing" constant="5" id="2n9-qP-xP3"/>
                         <constraint firstAttribute="trailing" secondItem="7j1-9I-K6j" secondAttribute="trailing" constant="30" id="3Sk-ux-cMX"/>
                         <constraint firstItem="DfZ-m6-k2I" firstAttribute="top" secondItem="ojm-NP-03k" secondAttribute="top" constant="18" id="4OW-rx-Bl5"/>
                         <constraint firstItem="zkp-a8-SAA" firstAttribute="leading" secondItem="8ko-FO-sku" secondAttribute="leading" id="65W-Ij-JzT"/>
                         <constraint firstItem="iKF-sR-iz0" firstAttribute="leading" secondItem="DfZ-m6-k2I" secondAttribute="leading" id="9DH-qP-6YZ"/>
-                        <constraint firstItem="qC7-jX-rAK" firstAttribute="leading" secondItem="C9I-4v-tfd" secondAttribute="leading" id="9Yo-mQ-dqt"/>
                         <constraint firstItem="7j1-9I-K6j" firstAttribute="top" secondItem="JCm-fH-Udu" secondAttribute="bottom" constant="10" id="DED-ji-ZFV"/>
                         <constraint firstItem="iKF-sR-iz0" firstAttribute="top" secondItem="DfZ-m6-k2I" secondAttribute="bottom" constant="5" id="GpN-2J-PL5"/>
-                        <constraint firstAttribute="trailing" secondItem="3rO-nj-L0e" secondAttribute="trailing" constant="43" id="H5D-e1-pXv"/>
                         <constraint firstItem="JCm-fH-Udu" firstAttribute="leading" secondItem="ojm-NP-03k" secondAttribute="leading" constant="30" id="N6j-ZJ-m8P"/>
                         <constraint firstItem="MPI-o0-jX1" firstAttribute="top" secondItem="iKF-sR-iz0" secondAttribute="bottom" constant="10" id="TfQ-QJ-Feh"/>
-                        <constraint firstItem="uMM-13-CBd" firstAttribute="centerY" secondItem="wVc-On-MN1" secondAttribute="centerY" id="WY5-hh-NfK"/>
                         <constraint firstItem="sy1-Kp-Ro8" firstAttribute="centerY" secondItem="8ko-FO-sku" secondAttribute="centerY" id="adk-vj-jON"/>
                         <constraint firstItem="C9I-4v-tfd" firstAttribute="leading" secondItem="ojm-NP-03k" secondAttribute="leading" constant="30" id="bnd-LA-Uus"/>
                         <constraint firstItem="fE9-9D-5rC" firstAttribute="centerY" secondItem="C9I-4v-tfd" secondAttribute="centerY" id="exJ-5h-NWD"/>
@@ -197,10 +145,7 @@
                         <constraint firstItem="ziN-gN-hqo" firstAttribute="centerY" secondItem="MPI-o0-jX1" secondAttribute="centerY" id="hfy-wl-Ig0"/>
                         <constraint firstAttribute="trailing" secondItem="sy1-Kp-Ro8" secondAttribute="trailing" constant="15" id="iMF-Ei-yfh"/>
                         <constraint firstItem="FLU-Mx-5gh" firstAttribute="top" secondItem="zkp-a8-SAA" secondAttribute="bottom" constant="30" id="mMG-eS-gqC"/>
-                        <constraint firstItem="3rO-nj-L0e" firstAttribute="leading" secondItem="uMM-13-CBd" secondAttribute="trailing" constant="5" id="mVk-74-8zg"/>
                         <constraint firstItem="DfZ-m6-k2I" firstAttribute="leading" secondItem="ojm-NP-03k" secondAttribute="leading" constant="200" id="nUM-Ge-yKl"/>
-                        <constraint firstItem="wVc-On-MN1" firstAttribute="centerY" secondItem="qC7-jX-rAK" secondAttribute="centerY" id="qJ2-4f-HLM"/>
-                        <constraint firstItem="3rO-nj-L0e" firstAttribute="centerY" secondItem="uMM-13-CBd" secondAttribute="centerY" id="qZ8-An-cDB"/>
                         <constraint firstItem="7j1-9I-K6j" firstAttribute="leading" secondItem="ojm-NP-03k" secondAttribute="leading" constant="30" id="rE7-k0-iQS"/>
                         <constraint firstAttribute="trailing" secondItem="fE9-9D-5rC" secondAttribute="trailing" constant="25" id="rRQ-WD-hxW"/>
                         <constraint firstItem="8ko-FO-sku" firstAttribute="top" secondItem="MPI-o0-jX1" secondAttribute="bottom" constant="5" id="rpZ-3Z-EjU"/>
@@ -209,9 +154,8 @@
                         <constraint firstItem="zkp-a8-SAA" firstAttribute="top" secondItem="8ko-FO-sku" secondAttribute="bottom" constant="20" id="w1q-dn-f6J"/>
                         <constraint firstItem="8ko-FO-sku" firstAttribute="leading" secondItem="MPI-o0-jX1" secondAttribute="leading" id="w7g-GM-6qg"/>
                         <constraint firstAttribute="trailing" secondItem="TY8-Tc-NB9" secondAttribute="trailing" constant="43" id="wNh-6X-Bri"/>
-                        <constraint firstItem="JCm-fH-Udu" firstAttribute="top" secondItem="C9I-4v-tfd" secondAttribute="bottom" constant="97" id="x0n-mf-1rS"/>
+                        <constraint firstItem="JCm-fH-Udu" firstAttribute="top" secondItem="C9I-4v-tfd" secondAttribute="bottom" constant="40" id="x0n-mf-1rS"/>
                         <constraint firstItem="FLU-Mx-5gh" firstAttribute="leading" secondItem="ojm-NP-03k" secondAttribute="leading" constant="30" id="xYo-ae-RnI"/>
-                        <constraint firstItem="qC7-jX-rAK" firstAttribute="top" secondItem="C9I-4v-tfd" secondAttribute="bottom" constant="35" id="xoI-Bf-SlG"/>
                         <constraint firstItem="C9I-4v-tfd" firstAttribute="top" secondItem="FLU-Mx-5gh" secondAttribute="bottom" constant="40" id="yC0-aB-gb5"/>
                         <constraint firstItem="TY8-Tc-NB9" firstAttribute="centerY" secondItem="JCm-fH-Udu" secondAttribute="centerY" id="yRW-9n-lev"/>
                     </constraints>
@@ -259,17 +203,13 @@
         </view>
     </objects>
     <designables>
-        <designable name="3rO-nj-L0e">
-            <size key="intrinsicContentSize" width="-7.5218572430675899e+180" height="34"/>
-        </designable>
-        <designable name="wVc-On-MN1">
-            <size key="intrinsicContentSize" width="-7.5218572430675899e+180" height="34"/>
+        <designable name="7j1-9I-K6j">
+            <size key="intrinsicContentSize" width="-1" height="65"/>
         </designable>
     </designables>
     <resources>
-        <image name="arrow-down" width="16" height="16"/>
-        <image name="ic_aleart" width="44" height="44"/>
-        <image name="ic_clock" width="44" height="44"/>
+        <image name="ic_aleart_iot" width="44" height="44"/>
+        <image name="ic_clock_iot" width="44" height="44"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
