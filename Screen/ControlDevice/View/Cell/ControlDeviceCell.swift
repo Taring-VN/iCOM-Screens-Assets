@@ -13,7 +13,7 @@ protocol ControlDeviceCellDelegate : AnyObject {
 }
 
 class ControlDeviceCell: UICollectionViewCell {
-    var cellDelegate: ControlDeviceCellDelegate?
+    weak var cellDelegate: ControlDeviceCellDelegate?
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subTitle: UILabel!

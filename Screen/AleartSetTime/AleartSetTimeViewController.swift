@@ -13,7 +13,7 @@ protocol SetTimeDelegate: AnyObject {
 
 class AleartSetTimeViewController: BaseVC {
     
-    var delegate: SetTimeDelegate? = nil
+    weak var delegate: SetTimeDelegate? = nil
 
     @IBOutlet weak var aleartView: UIView!
     @IBOutlet weak var containerView: UIView!

@@ -26,6 +26,16 @@ class ControlDeviceVC: BaseVC, ControlDeviceDelegate, ControlDeviceCellDelegate 
         configCollectionView()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
     func configCollectionView() {
         collectionControlDeviceView.backgroundColor = .white
         collectionControlDeviceView.register(ControlDeviceCell.nib, forCellWithReuseIdentifier: ControlDeviceCell.toNibName)
@@ -36,6 +46,7 @@ class ControlDeviceVC: BaseVC, ControlDeviceDelegate, ControlDeviceCellDelegate 
     override func setUpViews() {
         setTitleVC("Điều khiển thiết bị".uppercased())
         setRightButtonBar()
+        setBackButtonBar()
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
             appearance.shadowColor = .clear

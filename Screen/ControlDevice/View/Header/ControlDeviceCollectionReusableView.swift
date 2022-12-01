@@ -12,7 +12,7 @@ protocol ControlDeviceDelegate : class {
 }
 
 class ControlDeviceCollectionReusableView: UICollectionReusableView {
-    var cellDelegate: ControlDeviceDelegate?
+    weak var cellDelegate: ControlDeviceDelegate?
     
     @IBOutlet weak var powerConsumptionLabel: UILabel!
     @IBOutlet weak var cornerView: UIView!

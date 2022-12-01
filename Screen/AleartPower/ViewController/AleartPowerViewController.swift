@@ -8,13 +8,13 @@
 import UIKit
 import iCOM_Service
 
-protocol MyDataSendingDelegateProtocol {
+protocol MyDataSendingDelegateProtocol: AnyObject {
     func sendDataToFirstViewController(myData: String)
 }
 
 class AleartPowerViewController: BaseVC {
     private let viewModel = AleartPowerViewModel()
-    var delegate: MyDataSendingDelegateProtocol? = nil
+    weak var delegate: MyDataSendingDelegateProtocol? = nil
     
     var item = Items()
 
