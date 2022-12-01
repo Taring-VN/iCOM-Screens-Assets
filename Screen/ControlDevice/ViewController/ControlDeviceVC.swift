@@ -31,11 +31,6 @@ class ControlDeviceVC: BaseVC, ControlDeviceDelegate, ControlDeviceCellDelegate 
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-
     func configCollectionView() {
         collectionControlDeviceView.backgroundColor = .white
         collectionControlDeviceView.register(ControlDeviceCell.nib, forCellWithReuseIdentifier: ControlDeviceCell.toNibName)
