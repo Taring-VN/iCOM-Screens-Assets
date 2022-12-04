@@ -54,7 +54,7 @@ class ControlDeviceCollectionReusableView: UICollectionReusableView {
         warningBtn.setTitle("", for: .disabled)
         warningBtn.setTitle("", for: .highlighted)
         warningBtn.setTitle("", for: .selected)
-        warningBtn.setImage(UIImage(named: "ic_ring_iot"), for: .normal)
+        warningBtn.setImage(UIImage(named: "ic_aleart_iot"), for: .normal)
     }
     
     override func draw(_ rect: CGRect) {
