@@ -16,11 +16,47 @@ final class ControlDeviceViewModel: BaseViewModel {
     private var disposeRq: Disposable?
     
     var allListDevices = [Items]()
+    var arrSection = [String]()
+    var arrItem = [[Items]]()
     var powerConsum = Int()
     
     
     deinit {
         disposeRq?.dispose()
+    }
+    
+    func filterSection() {
+        arrSection.append("")
+        for item in allListDevices {
+            if let deviceType = item.deviceType {
+                if !arrSection.contains(deviceType) {
+                    arrSection.append(deviceType)
+                }
+            }
+        }
+        
+        print(arrSection)
+        
+        StoreData.shared.setListSections(listSections: arrSection)
+    }
+    
+    func filterItem() {
+        var item = [Items]()
+        for value in arrSection {
+            for _item in allListDevices {
+                if let deviceType = _item.deviceType {
+                    if value == deviceType {
+                        item.append(_item)
+                    }
+                }
+            }
+            arrItem.append(item)
+            item.removeAll()
+        }
+        
+        print(arrItem)
+        
+        StoreData.shared.setListItems(dictData: arrItem)
     }
 }
 
@@ -42,7 +78,8 @@ extension ControlDeviceViewModel {
                 onNext: { [unowned self] data in
                     self.pSLoadingBlockUI.onNext(false)
                     self.allListDevices.append(contentsOf: data)
-                    StoreData.shared.setListItems(dictData: data)
+                    filterSection()
+                    filterItem()
                     pSGetList.onNext(allListDevices)
                 },
                 onError: { [unowned self] error in

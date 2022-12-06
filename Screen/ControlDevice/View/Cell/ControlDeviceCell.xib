@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ControlDeviceCell" customModule="DemoX" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ControlDeviceCell" customModule="MotherApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="176" height="106"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -29,19 +28,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="176" height="106"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điều hoà LG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BF-ZH-Cpp">
-                                <rect key="frame" x="15" y="10" width="80" height="15"/>
+                                <rect key="frame" x="15" y="9.9999999999999982" width="151" height="16.333333333333329"/>
                                 <fontDescription key="fontDescription" name="SVN-GilroySemiBold" family="SVN-Gilroy" pointSize="14"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHÒNG NGỦ 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Obq-3N-dF1">
-                                <rect key="frame" x="15" y="29.000000000000004" width="65.333333333333329" height="10.666666666666668"/>
+                                <rect key="frame" x="15" y="30.333333333333332" width="151" height="10.666666666666668"/>
                                 <fontDescription key="fontDescription" name="SVN-Gilroy" family="SVN-Gilroy" pointSize="10"/>
                                 <color key="textColor" red="0.46666666666666667" green="0.53333333333333333" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iYG-X6-9k9">
-                                <rect key="frame" x="15" y="51.666666666666664" width="46" height="23.999999999999993"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iYG-X6-9k9" customClass="MySwitch" customModule="MotherApp" customModuleProvider="target">
+                                <rect key="frame" x="15" y="53" width="46" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="5QR-lD-Bcp"/>
                                     <constraint firstAttribute="width" constant="44" id="GyB-Ai-u4A"/>
@@ -56,10 +55,12 @@
                         <constraints>
                             <constraint firstItem="4BF-ZH-Cpp" firstAttribute="leading" secondItem="mS0-BO-Vgh" secondAttribute="leading" constant="15" id="RHB-xY-9Wo"/>
                             <constraint firstItem="iYG-X6-9k9" firstAttribute="leading" secondItem="Obq-3N-dF1" secondAttribute="leading" id="Uat-Qy-3RT"/>
+                            <constraint firstAttribute="trailing" secondItem="Obq-3N-dF1" secondAttribute="trailing" constant="10" id="aOi-pT-mRb"/>
                             <constraint firstItem="iYG-X6-9k9" firstAttribute="top" secondItem="Obq-3N-dF1" secondAttribute="bottom" constant="12" id="kfc-tX-Jtm"/>
                             <constraint firstItem="Obq-3N-dF1" firstAttribute="leading" secondItem="4BF-ZH-Cpp" secondAttribute="leading" id="pZ3-1O-Eo1"/>
                             <constraint firstItem="Obq-3N-dF1" firstAttribute="top" secondItem="4BF-ZH-Cpp" secondAttribute="bottom" constant="4" id="wF1-Gp-a3X"/>
                             <constraint firstItem="4BF-ZH-Cpp" firstAttribute="top" secondItem="mS0-BO-Vgh" secondAttribute="top" constant="10" id="wgT-Jo-1Wu"/>
+                            <constraint firstAttribute="trailing" secondItem="4BF-ZH-Cpp" secondAttribute="trailing" constant="10" id="ySs-Sh-TYg"/>
                         </constraints>
                     </view>
                 </subviews>

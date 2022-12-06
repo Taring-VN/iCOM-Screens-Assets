@@ -12,7 +12,9 @@ class ControlDeviceVC: BaseVC, ControlDeviceDelegate, ControlDeviceCellDelegate 
     
     private let viewModel = ControlDeviceViewModel()
     
-    var arrItems = [Items]()
+    var arrItems = [[Items]]()
+    var arrSection = [String]()
+    var arrOnOff = [Bool]()
    
     @IBOutlet weak var collectionControlDeviceView: UICollectionView!
     
@@ -35,6 +37,7 @@ class ControlDeviceVC: BaseVC, ControlDeviceDelegate, ControlDeviceCellDelegate 
         collectionControlDeviceView.backgroundColor = UIColor(hex: 0xEBEBF0)
         collectionControlDeviceView.register(ControlDeviceCell.nib, forCellWithReuseIdentifier: ControlDeviceCell.toNibName)
         collectionControlDeviceView.register(ControlDeviceCollectionReusableView.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ControlDeviceCollectionReusableView.toNibName)
+        collectionControlDeviceView.register(TypeHeaderView.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: TypeHeaderView.toNibName)
         collectionControlDeviceView.register(ControlDeviceFooterView.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: ControlDeviceFooterView.toNibName)
     }
 
@@ -63,7 +66,10 @@ class ControlDeviceVC: BaseVC, ControlDeviceDelegate, ControlDeviceCellDelegate 
         }.disposed(by: disposeBag)
         
         viewModel.pSGetList.bind { [unowned self] _ in
-            arrItems = StoreData.shared.getListItems() ?? [Items]()
+            arrItems = StoreData.shared.getListItems() ?? [[Items]]()
+            arrSection = StoreData.shared.getListSections() ?? [String]()
+            getOnOffValue()
+            arrOnOff = StoreData.shared.getListOnOff() ?? [Bool]()
             collectionControlDeviceView.reloadData()
         }.disposed(by: disposeBag)
     }
@@ -75,68 +81,147 @@ class ControlDeviceVC: BaseVC, ControlDeviceDelegate, ControlDeviceCellDelegate 
     
     func handleSwitchAction(_ tag: Int) {
     }
+    
+    func getOnOffValue() {
+        var onOffList = [Bool]()
+        
+        for arrItemSection in arrItems {
+            var check = true
+            for item in arrItemSection {
+                if !(item.status ?? false) {
+                    check = false
+                }
+            }
+            onOffList.append(check)
+        }
+        
+        StoreData.shared.setListOnOff(listOnOff: onOffList)
+        
+        arrOnOff = StoreData.shared.getListOnOff() ?? [Bool]()
+        
+        DispatchQueue.main.async {
+            self.collectionControlDeviceView.reloadData()
+        }
+    }
 }
 
 extension ControlDeviceVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return arrSection.count
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        var reusableView = UICollectionReusableView()
+        let section = indexPath.section
+        
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ControlDeviceCollectionReusableView.toNibName, for: indexPath) as? ControlDeviceCollectionReusableView else {
-                return UICollectionReusableView()
+            switch section {
+            case 0:
+                guard let firstHeader = collectionControlDeviceView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ControlDeviceCollectionReusableView.toNibName, for: indexPath) as? ControlDeviceCollectionReusableView else {
+                    return reusableView
+                }
+                
+                firstHeader.cellDelegate = self
+                firstHeader.alarmBtn.tag = indexPath.row
+                firstHeader.powerConsumptionLabel.text = "\(viewModel.powerConsum) kWh"
+                
+                reusableView = firstHeader
+            default:
+                guard let secondHeader = collectionControlDeviceView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TypeHeaderView.toNibName, for: indexPath) as? TypeHeaderView else {
+                    return reusableView
+                }
+                
+                let sectionValue = arrSection[indexPath.section]
+                let onOffValue = arrOnOff[indexPath.section]
+                
+                secondHeader.bindView(sectionName: sectionValue, onOffValue: onOffValue)
+                secondHeader.onOffAllDevices.tag = indexPath.section
+                secondHeader.onOffAllDevices.addTarget(self, action: #selector(onOffAllDevice), for: .valueChanged)
+                
+                
+                reusableView = secondHeader
             }
             
-            header.cellDelegate = self
-            header.alarmBtn.tag = indexPath.row
-            header.powerConsumptionLabel.text = "\(viewModel.powerConsum) kWh"
-            
-            return header
+            return reusableView
         case UICollectionView.elementKindSectionFooter:
-            guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ControlDeviceFooterView.toNibName, for: indexPath) as? ControlDeviceFooterView else {
-                return UICollectionReusableView()
+            guard let footer = collectionControlDeviceView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ControlDeviceFooterView.toNibName, for: indexPath) as? ControlDeviceFooterView else {
+                return reusableView
             }
             
-            return footer
+            reusableView = footer
         default:
-            assert(false, "Unexpected element kind")
+            break
         }
+        
+        return reusableView
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.allListDevices.count
+        if section == 0 {
+            return 0
+        }
+        return arrItems[section].count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ControlDeviceCell.toNibName, for: indexPath) as? ControlDeviceCell else {
+        guard let cell = collectionControlDeviceView.dequeueReusableCell(withReuseIdentifier: ControlDeviceCell.toNibName, for: indexPath) as? ControlDeviceCell else {
             return UICollectionViewCell()
         }
         
         cell.cellDelegate = self
         
-        if let item = StoreData.shared.getListItems()?[indexPath.row] {
-            cell.bindView(item: item)
-        }
+        let item = arrItems[indexPath.section][indexPath.row]
+        cell.bindView(item: item)
         
-        cell.onOffDevice.tag = indexPath.row
-        cell.onOffDevice.addTarget(self, action: #selector(switchTriggered), for: .valueChanged )
+        cell.onOffDevice.row = indexPath.row
+        cell.onOffDevice.section = indexPath.section
+        cell.onOffDevice.addTarget(self, action: #selector(switchTriggered), for: .valueChanged)
 
         return cell
     }
     
     @objc
     func switchTriggered(sender: AnyObject) {
+        let switchOnOff = sender as! MySwitch
+        let row = switchOnOff.row
+        let section = switchOnOff.section
         
-        let switchOnOff = sender as! UISwitch
-        let deviceSelected = arrItems[switchOnOff.tag]
+        let deviceSelected = arrItems[switchOnOff.section ?? 0][switchOnOff.row ?? 0]
+        
         
         viewModel.loadOnOffDevice(mac: deviceSelected.mac ?? "", status: !(deviceSelected.status ?? false))
         
-        arrItems[switchOnOff.tag].status = !(deviceSelected.status ?? false)
+        arrItems[section ?? 0][row ?? 0].status = !(deviceSelected.status ?? false)
         
         StoreData.shared.setListItems(dictData: arrItems)
+        
+        getOnOffValue()
+    }
+    
+    @objc
+    func onOffAllDevice(sender: AnyObject) {
+        let switchOnOff = sender as! UISwitch
+        let deviceSelected = arrItems[switchOnOff.tag]
+        
+        if !arrOnOff[switchOnOff.tag] {
+            for (index, item) in deviceSelected.enumerated() {
+                viewModel.loadOnOffDevice(mac: item.mac ?? "", status: true)
+                
+                arrItems[switchOnOff.tag][index].status = true
+            }
+        } else {
+            for (index, item) in deviceSelected.enumerated() {
+                viewModel.loadOnOffDevice(mac: item.mac ?? "", status: false)
+                
+                arrItems[switchOnOff.tag][index].status = false
+            }
+        }
+        
+        
+        StoreData.shared.setListItems(dictData: arrItems)
+        
+        getOnOffValue()
     }
 
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -153,11 +238,14 @@ extension ControlDeviceVC: UICollectionViewDataSource, UICollectionViewDelegate 
 extension ControlDeviceVC: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        let paddingSpace = self.sectionInsets.left * CGFloat(self.itemsPerRow - 1)
-        let availableWith = self.view.frame.width - paddingSpace
-        let widthPerItem = availableWith / CGFloat(self.itemsPerRow)
-        return CGSize(width: widthPerItem, height: 100)
+        if arrItems[indexPath.section].count > 1 {
+            let paddingSpace = self.sectionInsets.left * CGFloat(self.itemsPerRow - 1)
+            let availableWith = self.view.frame.width - paddingSpace
+            let widthPerItem = availableWith / CGFloat(self.itemsPerRow)
+            return CGSize(width: widthPerItem, height: 100)
+        } else {
+            return CGSize(width: collectionView.frame.width, height: 100)
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -169,10 +257,22 @@ extension ControlDeviceVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-            return CGSize(width: collectionView.frame.width, height: 620) //add your height here
+        if section == 0 {
+            return CGSize(width: collectionView.frame.width, height: 450)
+        } else {
+            return CGSize(width: collectionView.frame.width, height: 150)
         }
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-            return CGSize(width: collectionView.frame.width, height: 180) //add your height here
+        if section == 0 {
+            return CGSizeZero
         }
+        return CGSize(width: collectionView.frame.width, height: 1)
+    }
+}
+
+class MySwitch: UISwitch {
+    var row: Int?
+    var section: Int?
 }

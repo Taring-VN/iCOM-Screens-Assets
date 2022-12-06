@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ControlDeviceDelegate : class {
+protocol ControlDeviceDelegate : AnyObject {
     func didPressButton(_ tag: Int)
 }
 
@@ -62,5 +62,4 @@ class ControlDeviceCollectionReusableView: UICollectionReusableView {
             cornerView.layer.cornerRadius = 10
             cornerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
-    
 }

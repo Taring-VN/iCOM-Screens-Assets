@@ -17,7 +17,7 @@ class ControlDeviceCell: UICollectionViewCell {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subTitle: UILabel!
-    @IBOutlet weak var onOffDevice: UISwitch!
+    @IBOutlet weak var onOffDevice: MySwitch!
     
     @IBAction func onOffAction(_ sender: UISwitch) {
         if sender.isOn {
@@ -31,7 +31,7 @@ class ControlDeviceCell: UICollectionViewCell {
     }
     
     func bindView(item: Items) {
-        title.text = item.deviceType
+        title.text = item.name
         subTitle.text = item.address
         
         if let valueSwitch = item.status {

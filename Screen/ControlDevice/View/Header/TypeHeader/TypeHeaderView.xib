@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SVN-Gilroy Bold.otf">
+            <string>SVN-GilroyBold</string>
+        </array>
+        <array key="SVN-Gilroy Regular.otf">
+            <string>SVN-Gilroy</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="TypeHeaderView" customModule="MotherApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="428" height="160"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kr2-ne-6qt">
+                    <rect key="frame" x="0.0" y="0.0" width="428" height="160"/>
+                    <subviews>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q9i-DF-qUY">
+                            <rect key="frame" x="355" y="64.666666666666671" width="51" height="31"/>
+                            <color key="onTintColor" red="0.0" green="0.47058823529999999" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onOffAllDevicesAction:" destination="U6b-Vx-4bR" eventType="valueChanged" id="Wzu-k9-dAP"/>
+                            </connections>
+                        </switch>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="I6l-h7-tds">
+                            <rect key="frame" x="99.999999999999986" y="29" width="137.66666666666663" height="102"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên loại thiết bị" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOH-5z-Ecu">
+                                    <rect key="frame" x="0.0" y="0.0" width="109.66666666666667" height="18.666666666666668"/>
+                                    <fontDescription key="fontDescription" name="SVN-GilroyBold" family="SVN-Gilroy" pointSize="16"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quá định mức 30kWh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUd-xa-MWk">
+                                    <rect key="frame" x="0.0" y="31.666666666666664" width="137.66666666666666" height="16.333333333333336"/>
+                                    <fontDescription key="fontDescription" name="SVN-Gilroy" family="SVN-Gilroy" pointSize="14"/>
+                                    <color key="textColor" red="0.14117647059999999" green="0.19215686269999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b7T-ov-AMk">
+                                    <rect key="frame" x="0.0" y="61" width="99" height="14"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Thiết lập" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtQ-iV-hoY">
+                                            <rect key="frame" x="0.0" y="0.0" width="46.666666666666664" height="14"/>
+                                            <fontDescription key="fontDescription" name="SVN-Gilroy" family="SVN-Gilroy" pointSize="12"/>
+                                            <color key="textColor" red="0.14117647059999999" green="0.19215686269999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=": 32kWh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAI-5K-o6c">
+                                            <rect key="frame" x="54.666666666666657" y="0.0" width="44.333333333333343" height="14"/>
+                                            <fontDescription key="fontDescription" name="SVN-Gilroy" family="SVN-Gilroy" pointSize="12"/>
+                                            <color key="textColor" red="0.0" green="0.47058823529999999" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jbQ-9A-tgG">
+                                    <rect key="frame" x="0.0" y="88" width="95.666666666666671" height="14"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Tiêu thụ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqQ-UW-xwj">
+                                            <rect key="frame" x="0.0" y="0.0" width="43.333333333333336" height="14"/>
+                                            <fontDescription key="fontDescription" name="SVN-Gilroy" family="SVN-Gilroy" pointSize="12"/>
+                                            <color key="textColor" red="0.14117647059999999" green="0.19215686269999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=": 32kWh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzk-C6-IaO">
+                                            <rect key="frame" x="51.333333333333343" y="0.0" width="44.333333333333343" height="14"/>
+                                            <fontDescription key="fontDescription" name="SVN-Gilroy" family="SVN-Gilroy" pointSize="12"/>
+                                            <color key="textColor" systemColor="systemRedColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_device_iot" translatesAutoresizingMaskIntoConstraints="NO" id="TEM-Ke-h6y">
+                            <rect key="frame" x="24" y="48" width="64" height="64"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gt3-6n-c0Q">
+                            <rect key="frame" x="24" y="159" width="380" height="1"/>
+                            <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="f26-ph-dKk"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="TEM-Ke-h6y" firstAttribute="leading" secondItem="Kr2-ne-6qt" secondAttribute="leading" constant="24" id="2rk-f8-HFO"/>
+                        <constraint firstAttribute="bottom" secondItem="gt3-6n-c0Q" secondAttribute="bottom" id="8N5-eH-bED"/>
+                        <constraint firstItem="I6l-h7-tds" firstAttribute="centerY" secondItem="TEM-Ke-h6y" secondAttribute="centerY" id="8yg-DQ-B2Z"/>
+                        <constraint firstItem="TEM-Ke-h6y" firstAttribute="leading" secondItem="gt3-6n-c0Q" secondAttribute="leading" id="O6D-QQ-khl"/>
+                        <constraint firstItem="Q9i-DF-qUY" firstAttribute="centerY" secondItem="I6l-h7-tds" secondAttribute="centerY" id="OXg-bb-8eF"/>
+                        <constraint firstItem="I6l-h7-tds" firstAttribute="leading" secondItem="TEM-Ke-h6y" secondAttribute="trailing" constant="12" id="WAG-P9-9N4"/>
+                        <constraint firstAttribute="trailing" secondItem="gt3-6n-c0Q" secondAttribute="trailing" constant="24" id="jAS-Us-JpL"/>
+                        <constraint firstItem="gt3-6n-c0Q" firstAttribute="top" secondItem="I6l-h7-tds" secondAttribute="bottom" constant="28" id="pxW-fJ-8lf"/>
+                        <constraint firstItem="gt3-6n-c0Q" firstAttribute="leading" secondItem="Kr2-ne-6qt" secondAttribute="leading" constant="24" id="uAU-FG-4zS"/>
+                        <constraint firstAttribute="trailing" secondItem="Q9i-DF-qUY" secondAttribute="trailing" constant="24" id="wNJ-Sd-JeW"/>
+                        <constraint firstItem="TEM-Ke-h6y" firstAttribute="centerY" secondItem="Kr2-ne-6qt" secondAttribute="centerY" id="yWJ-pJ-ias"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="Kr2-ne-6qt" secondAttribute="trailing" id="BGu-z9-RYP"/>
+                <constraint firstItem="Kr2-ne-6qt" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="LU2-NO-O65"/>
+                <constraint firstItem="Kr2-ne-6qt" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="QqX-QR-gVz"/>
+                <constraint firstAttribute="bottom" secondItem="Kr2-ne-6qt" secondAttribute="bottom" id="bTR-rN-o12"/>
+            </constraints>
+            <connections>
+                <outlet property="onOffAllDevices" destination="Q9i-DF-qUY" id="59D-Z4-ajE"/>
+                <outlet property="typeDevice" destination="JOH-5z-Ecu" id="2s7-4A-Ah7"/>
+            </connections>
+            <point key="canvasLocation" x="200" y="-48.591549295774648"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="ic_device_iot" width="64" height="64"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
