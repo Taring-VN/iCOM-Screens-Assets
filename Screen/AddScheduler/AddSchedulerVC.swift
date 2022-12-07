@@ -57,6 +57,7 @@ class AddSchedulerVC: BaseVC {
         changeLoopControl.setTitleTextAttributes(titleNormalTextAttributes, for: .normal)
         changeLoopControl.setTitleTextAttributes(titleSelectedTextAttributes, for: .selected)
         changeLoopControl.addTarget(self, action: #selector(indexChanged), for: .valueChanged)
+    
         addDeviceBtn.setTitle("", for: .normal)
         addDeviceBtn.setTitle("", for: .disabled)
         addDeviceBtn.setTitle("", for: .highlighted)
@@ -95,6 +96,11 @@ class AddSchedulerVC: BaseVC {
 
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        changeLoopControl.layer.cornerRadius = changeLoopControl.frame.height / 2.0
+    }
+    
     @objc func indexChanged(_ sender: UISegmentedControl) {
         if changeLoopControl.selectedSegmentIndex == 0 {
             print("Select 0")
@@ -103,5 +109,53 @@ class AddSchedulerVC: BaseVC {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
-
+    
+    
 }
+
+class YourSegmentedControl: UISegmentedControl {
+    override func layoutSubviews(){
+        super.layoutSubviews()
+        
+        let segmentStringSelected: [NSAttributedString.Key : Any] = [
+          NSAttributedString.Key.foregroundColor : UIColor.white
+        ]
+        
+        let segmentStringHighlited: [NSAttributedString.Key : Any] = [
+          NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.5567105412, green: 0.5807551742, blue: 0.6022000909, alpha: 1)
+        ]
+        
+        setTitleTextAttributes(segmentStringHighlited, for: .normal)
+        setTitleTextAttributes(segmentStringSelected, for: .selected)
+        setTitleTextAttributes(segmentStringHighlited, for: .highlighted)
+        
+        layer.masksToBounds = true
+        
+        backgroundColor = #colorLiteral(red: 0.9491805434, green: 0.949011147, blue: 0.9615796208, alpha: 1)
+        
+        //corner radius
+        let cornerRadius = bounds.height / 2
+        let maskedCorners: CACornerMask = [.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        //background
+        clipsToBounds = true
+        layer.cornerRadius = cornerRadius
+        layer.maskedCorners = maskedCorners
+
+        let foregroundIndex = numberOfSegments
+        if subviews.indices.contains(foregroundIndex),
+          let foregroundImageView = subviews[foregroundIndex] as? UIImageView {
+          foregroundImageView.image = UIImage()
+          foregroundImageView.clipsToBounds = true
+          foregroundImageView.layer.masksToBounds = true
+          foregroundImageView.backgroundColor = #colorLiteral(red: 0.9769479632, green: 0.6273059249, blue: 0.07381231338, alpha: 1)
+          
+          foregroundImageView.layer.cornerRadius = bounds.height / 2 + 5
+          foregroundImageView.layer.maskedCorners = maskedCorners
+        }
+      }
+      
+      override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return false
+      }
+}
+

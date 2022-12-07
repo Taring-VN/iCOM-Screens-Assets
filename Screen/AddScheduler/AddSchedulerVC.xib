@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,7 +16,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddSchedulerVC" customModule="DemoX" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddSchedulerVC" customModule="MotherApp" customModuleProvider="target">
             <connections>
                 <outlet property="actionBtn" destination="f83-V2-wTv" id="KBv-qF-q9l"/>
                 <outlet property="addDeviceBtn" destination="kvF-QR-T72" id="5s5-5z-6vc"/>
@@ -58,7 +57,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </datePicker>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qoS-uO-mN7">
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qoS-uO-mN7" customClass="YourSegmentedControl" customModule="MotherApp" customModuleProvider="target">
                                     <rect key="frame" x="129.5" y="268" width="155" height="37"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="36" id="4YZ-j5-zbG"/>
@@ -70,31 +69,31 @@
                                     <color key="selectedSegmentTintColor" red="1" green="0.62745098039215685" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                 </segmentedControl>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên lịch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgq-ob-e4X">
-                                    <rect key="frame" x="16" y="354" width="382" height="15"/>
+                                    <rect key="frame" x="16" y="354" width="382" height="16.5"/>
                                     <fontDescription key="fontDescription" name="SVN-GilroyMedium" family="SVN-Gilroy" pointSize="14"/>
                                     <color key="textColor" red="0.14117647058823529" green="0.19215686274509802" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thiết bị" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQ4-9c-sM0">
-                                    <rect key="frame" x="16" y="449" width="342" height="15"/>
+                                    <rect key="frame" x="16" y="450.5" width="342" height="16.5"/>
                                     <fontDescription key="fontDescription" name="SVN-GilroyMedium" family="SVN-Gilroy" pointSize="14"/>
                                     <color key="textColor" red="0.14117647059999999" green="0.19215686269999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hành động" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4Y-hP-S5D">
-                                    <rect key="frame" x="16" y="505" width="342" height="15"/>
+                                    <rect key="frame" x="16" y="508" width="342" height="16.5"/>
                                     <fontDescription key="fontDescription" name="SVN-GilroyMedium" family="SVN-Gilroy" pointSize="14"/>
                                     <color key="textColor" red="0.14117647059999999" green="0.19215686269999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TẮT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdd-24-7Ll">
-                                    <rect key="frame" x="16" y="528" width="382" height="13"/>
+                                    <rect key="frame" x="16" y="532.5" width="382" height="14"/>
                                     <fontDescription key="fontDescription" name="SVN-Gilroy" family="SVN-Gilroy" pointSize="12"/>
                                     <color key="textColor" red="0.0" green="0.47058823529411764" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Đặt tên" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vbm-vA-y2z">
-                                    <rect key="frame" x="16" y="389" width="382" height="40"/>
+                                    <rect key="frame" x="16" y="390.5" width="382" height="40"/>
                                     <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="NfW-8n-yyc"/>
@@ -103,7 +102,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvF-QR-T72">
-                                    <rect key="frame" x="374" y="444.5" width="24" height="24"/>
+                                    <rect key="frame" x="374" y="447" width="24" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="24" id="AnN-JF-Now"/>
                                         <constraint firstAttribute="height" constant="24" id="qAa-r7-l9L"/>
@@ -115,7 +114,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f83-V2-wTv">
-                                    <rect key="frame" x="374" y="508.5" width="24" height="24"/>
+                                    <rect key="frame" x="374" y="512.5" width="24" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="Svf-fC-Fnv"/>
                                         <constraint firstAttribute="width" constant="24" id="TI8-gY-5HF"/>
@@ -127,21 +126,21 @@
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lij-GO-tiW">
-                                    <rect key="frame" x="16" y="484" width="382" height="1"/>
+                                    <rect key="frame" x="16" y="487" width="382" height="1"/>
                                     <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="XxA-2L-xY5"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBC-Yc-xjT">
-                                    <rect key="frame" x="16" y="549" width="382" height="1"/>
+                                    <rect key="frame" x="16" y="554.5" width="382" height="1"/>
                                     <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="VXk-iP-xDw"/>
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3J-RG-CSl">
-                                    <rect key="frame" x="79" y="600" width="120" height="40"/>
+                                    <rect key="frame" x="79" y="605.5" width="120" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="120" id="2ql-5V-1cG"/>
                                         <constraint firstAttribute="height" constant="40" id="dQV-6k-ObF"/>
@@ -152,7 +151,7 @@
                                     </buttonConfiguration>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xf-Qz-XX8">
-                                    <rect key="frame" x="215" y="600" width="120" height="40"/>
+                                    <rect key="frame" x="215" y="605.5" width="120" height="40"/>
                                     <color key="backgroundColor" red="0.0" green="0.47058823529999999" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="120" id="7h8-Cg-UDZ"/>

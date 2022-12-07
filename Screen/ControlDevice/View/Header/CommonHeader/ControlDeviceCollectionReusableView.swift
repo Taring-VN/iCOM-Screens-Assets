@@ -58,8 +58,22 @@ class ControlDeviceCollectionReusableView: UICollectionReusableView {
     }
     
     override func draw(_ rect: CGRect) {
-            cornerView.clipsToBounds = true
-            cornerView.layer.cornerRadius = 10
-            cornerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        let path = UIBezierPath(roundedRect: cornerView.bounds,
+                                byRoundingCorners:[.topRight, .topLeft],
+                                cornerRadii: CGSize(width: 100, height: 100))
+
+        let maskLayer = CAShapeLayer()
+
+        maskLayer.path = path.cgPath
+        cornerView.layer.mask = maskLayer
     }
+}
+
+extension UIView {
+  func round(corners: UIRectCorner, radius: CGFloat) {
+    let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+    let mask = CAShapeLayer()
+    mask.path = path.cgPath
+    self.layer.mask = mask
+  }
 }

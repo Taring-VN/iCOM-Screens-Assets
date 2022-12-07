@@ -68,7 +68,7 @@ class ListAlarmVC: BaseVC {
     override func viewDidLayoutSubviews() {
         let path = UIBezierPath(roundedRect: containerView.bounds,
                                 byRoundingCorners:[.topRight, .topLeft],
-                                cornerRadii: CGSize(width: 20, height:  20))
+                                cornerRadii: CGSize(width: 30, height:  30))
 
         let maskLayer = CAShapeLayer()
 
