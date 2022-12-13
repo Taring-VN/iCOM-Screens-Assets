@@ -29,7 +29,7 @@
                             <constraint firstAttribute="height" constant="24" id="N54-fj-s1h"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain"/>
+                        <buttonConfiguration key="configuration" style="plain" title=" "/>
                         <connections>
                             <action selector="selectTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fth-MD-OBI"/>
                         </connections>
