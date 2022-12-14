@@ -229,7 +229,7 @@ extension ControlDeviceVC: UICollectionViewDataSource, UICollectionViewDelegate 
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = HomeViewController()
-        vc.item = viewModel.allListDevices[indexPath.row]
+        vc.item = arrItems[indexPath.section][indexPath.row]
         
         navigationController?.pushViewController(vc, animated: true)
     }

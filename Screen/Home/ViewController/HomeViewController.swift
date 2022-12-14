@@ -15,6 +15,12 @@ class HomeViewController: BaseVC, MyDataSendingDelegateProtocol {
     
     var item = Items()
     
+    @IBOutlet weak var nameDevice: UILabel!
+    
+    @IBOutlet weak var powerPercent: UILabel!
+    
+    @IBOutlet weak var addressDevice: UILabel!
+    
     @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var powerView: UIView!
@@ -41,7 +47,12 @@ class HomeViewController: BaseVC, MyDataSendingDelegateProtocol {
     }
     
     func sendDataToFirstViewController(myData: String) {
-        consumePower.text = "\(myData) kWh"
+        if let number = Int(myData), number > 0 {
+            let consumePowerNumber = (item.currentReport?.power ?? 0) - number
+            consumePower.text = "\(consumePowerNumber) kWh"
+        } else {
+            consumePower.text = "\(myData) kWh"
+        }
     }
     
     private lazy var datePicker1: UIDatePicker = {
@@ -72,6 +83,11 @@ class HomeViewController: BaseVC, MyDataSendingDelegateProtocol {
         containerView.backgroundColor = .white
         
         overPower.text = "\((item.power ?? 90) - (item.powerConsumptionLimited ?? 0)) kWh"
+        
+        consumePower.text = "\(item.currentReport?.power ?? 0) kWh"
+        
+        nameDevice.text = item.name
+        addressDevice.text = item.address
     }
     
     override func setupBindings() {

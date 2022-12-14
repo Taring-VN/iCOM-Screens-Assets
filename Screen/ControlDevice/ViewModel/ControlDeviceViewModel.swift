@@ -35,8 +35,6 @@ final class ControlDeviceViewModel: BaseViewModel {
             }
         }
         
-        print(arrSection)
-        
         StoreData.shared.setListSections(listSections: arrSection)
     }
     

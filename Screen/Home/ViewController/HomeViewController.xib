@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -20,12 +19,15 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="DemoX" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MotherApp" customModuleProvider="target">
             <connections>
+                <outlet property="addressDevice" destination="iKF-sR-iz0" id="amz-QM-430"/>
                 <outlet property="consumePower" destination="ziN-gN-hqo" id="kkq-vr-w7T"/>
                 <outlet property="containerView" destination="ojm-NP-03k" id="ath-6O-2XT"/>
+                <outlet property="nameDevice" destination="DfZ-m6-k2I" id="lQJ-ke-okC"/>
                 <outlet property="outLetSwitch" destination="zkp-a8-SAA" id="7qL-ZF-dsa"/>
                 <outlet property="overPower" destination="sy1-Kp-Ro8" id="2bJ-Vv-VJq"/>
+                <outlet property="powerPercent" destination="dMe-0q-IXq" id="28F-AS-WP1"/>
                 <outlet property="powerView" destination="LgK-Fj-AyE" id="fTF-dG-NZD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -36,46 +38,46 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojm-NP-03k">
-                    <rect key="frame" x="0.0" y="139" width="393" height="713"/>
+                    <rect key="frame" x="0.0" y="80" width="393" height="772"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điều hoà LG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfZ-m6-k2I">
-                            <rect key="frame" x="199.99999999999997" y="18" width="114.66666666666666" height="21"/>
+                            <rect key="frame" x="200" y="18" width="169" height="23.333333333333329"/>
                             <fontDescription key="fontDescription" name="SVN-GilroyBold" family="SVN-Gilroy" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phòng ngủ 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKF-sR-iz0">
-                            <rect key="frame" x="200" y="44" width="77.666666666666686" height="15"/>
+                            <rect key="frame" x="200" y="46.333333333333329" width="169" height="16.333333333333329"/>
                             <fontDescription key="fontDescription" name="SVN-Gilroy" family="SVN-Gilroy" pointSize="14"/>
                             <color key="textColor" red="0.25181329250000001" green="0.30197998879999999" blue="0.31912922859999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiêu thụ:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPI-o0-jX1">
-                            <rect key="frame" x="200" y="69" width="46.333333333333343" height="12.666666666666671"/>
+                            <rect key="frame" x="200" y="72.666666666666657" width="46.666666666666657" height="14"/>
                             <fontDescription key="fontDescription" name="SVN-Gilroy" family="SVN-Gilroy" pointSize="12"/>
                             <color key="textColor" red="0.25181329250000001" green="0.30197998879999999" blue="0.31912922859999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quá định mức:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ko-FO-sku">
-                            <rect key="frame" x="200" y="86.666666666666657" width="80" height="12.666666666666671"/>
+                            <rect key="frame" x="200" y="91.666666666666657" width="80.666666666666686" height="14"/>
                             <fontDescription key="fontDescription" name="SVN-Gilroy" family="SVN-Gilroy" pointSize="12"/>
                             <color key="textColor" red="0.25181329250000001" green="0.30197998879999999" blue="0.31912922859999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziN-gN-hqo">
-                            <rect key="frame" x="371.66666666666669" y="69" width="6.3333333333333144" height="12.666666666666671"/>
+                            <rect key="frame" x="373" y="72.666666666666657" width="5" height="14"/>
                             <fontDescription key="fontDescription" name="SVN-GilroyMedium" family="SVN-Gilroy" pointSize="12"/>
                             <color key="textColor" red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sy1-Kp-Ro8">
-                            <rect key="frame" x="371.66666666666669" y="86.666666666666657" width="6.3333333333333144" height="12.666666666666671"/>
+                            <rect key="frame" x="373" y="91.666666666666657" width="5" height="14"/>
                             <fontDescription key="fontDescription" name="SVN-GilroyMedium" family="SVN-Gilroy" pointSize="12"/>
                             <color key="textColor" systemColor="systemRedColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zkp-a8-SAA">
-                            <rect key="frame" x="200" y="119.33333333333331" width="46" height="24"/>
+                            <rect key="frame" x="200" y="125.66666666666666" width="46" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="Xhy-Yj-cuI"/>
                                 <constraint firstAttribute="width" constant="44" id="gly-Fn-nGo"/>
@@ -87,32 +89,32 @@
                             </connections>
                         </switch>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLU-Mx-5gh">
-                            <rect key="frame" x="30" y="173.33333333333331" width="333" height="1"/>
+                            <rect key="frame" x="30" y="179.66666666666669" width="333" height="1"/>
                             <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="eOB-Ax-gGI"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hẹn giờ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9I-4v-tfd">
-                            <rect key="frame" x="30" y="214.33333333333331" width="71" height="21"/>
+                            <rect key="frame" x="30" y="220.66666666666669" width="72" height="23.333333333333343"/>
                             <fontDescription key="fontDescription" name="SVN-GilroyBold" family="SVN-Gilroy" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Công suất" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCm-fH-Udu">
-                            <rect key="frame" x="30" y="275.33333333333331" width="67.666666666666671" height="17"/>
+                            <rect key="frame" x="30" y="284" width="67.666666666666671" height="17"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23kWh - 52kWh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TY8-Tc-NB9">
-                            <rect key="frame" x="258" y="276.66666666666669" width="92" height="14.333333333333314"/>
+                            <rect key="frame" x="258" y="285.33333333333331" width="92" height="14.333333333333314"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" red="0.0" green="0.47058823529411764" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7j1-9I-K6j" customClass="RangeSeekSlider" customModule="RangeSeekSlider">
-                            <rect key="frame" x="30" y="302.33333333333331" width="333" height="30"/>
+                            <rect key="frame" x="30" y="311" width="333" height="30"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="0Om-0g-H4A"/>
@@ -124,10 +126,10 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="-4" translatesAutoresizingMaskIntoConstraints="NO" id="fE9-9D-5rC">
-                            <rect key="frame" x="219.66666666666663" y="188" width="148.33333333333337" height="74"/>
+                            <rect key="frame" x="236" y="203.33333333333331" width="132" height="58"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QU-DU-09J">
-                                    <rect key="frame" x="0.0" y="0.0" width="84.333333333333329" height="74"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="68" height="58"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="ic_aleart_iot" title=""/>
                                     <connections>
@@ -135,7 +137,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LG8-Nz-2LV">
-                                    <rect key="frame" x="80.333333333333343" y="0.0" width="68" height="74"/>
+                                    <rect key="frame" x="64" y="0.0" width="68" height="58"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="ic_clock_iot" title=""/>
                                     <connections>
@@ -147,6 +149,7 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="DfZ-m6-k2I" secondAttribute="trailing" constant="24" id="1rK-w6-bVL"/>
                         <constraint firstAttribute="trailing" secondItem="7j1-9I-K6j" secondAttribute="trailing" constant="30" id="3Sk-ux-cMX"/>
                         <constraint firstItem="DfZ-m6-k2I" firstAttribute="top" secondItem="ojm-NP-03k" secondAttribute="top" constant="18" id="4OW-rx-Bl5"/>
                         <constraint firstItem="zkp-a8-SAA" firstAttribute="leading" secondItem="8ko-FO-sku" secondAttribute="leading" id="65W-Ij-JzT"/>
@@ -160,6 +163,7 @@
                         <constraint firstItem="fE9-9D-5rC" firstAttribute="centerY" secondItem="C9I-4v-tfd" secondAttribute="centerY" id="exJ-5h-NWD"/>
                         <constraint firstAttribute="trailing" secondItem="ziN-gN-hqo" secondAttribute="trailing" constant="15" id="fFK-wf-wPG"/>
                         <constraint firstItem="ziN-gN-hqo" firstAttribute="centerY" secondItem="MPI-o0-jX1" secondAttribute="centerY" id="hfy-wl-Ig0"/>
+                        <constraint firstAttribute="trailing" secondItem="iKF-sR-iz0" secondAttribute="trailing" constant="24" id="hwe-fE-KRM"/>
                         <constraint firstAttribute="trailing" secondItem="sy1-Kp-Ro8" secondAttribute="trailing" constant="15" id="iMF-Ei-yfh"/>
                         <constraint firstItem="FLU-Mx-5gh" firstAttribute="top" secondItem="zkp-a8-SAA" secondAttribute="bottom" constant="30" id="mMG-eS-gqC"/>
                         <constraint firstItem="DfZ-m6-k2I" firstAttribute="leading" secondItem="ojm-NP-03k" secondAttribute="leading" constant="200" id="nUM-Ge-yKl"/>
@@ -178,16 +182,16 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LgK-Fj-AyE">
-                    <rect key="frame" x="32" y="109" width="140" height="150"/>
+                    <rect key="frame" x="32" y="50" width="140" height="150"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="93%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMe-0q-IXq">
-                            <rect key="frame" x="8" y="29.999999999999996" width="124" height="33.666666666666657"/>
+                            <rect key="frame" x="8" y="30.000000000000004" width="124" height="37.333333333333343"/>
                             <fontDescription key="fontDescription" name="SVN-GilroyBold" family="SVN-Gilroy" pointSize="32"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Công suất loại thiết bị" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oR3-Ue-SPd">
-                            <rect key="frame" x="8" y="83.666666666666657" width="124" height="14.333333333333329"/>
+                            <rect key="frame" x="8" y="87.333333333333343" width="124" height="14.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -225,7 +229,7 @@
         </designable>
     </designables>
     <resources>
-        <image name="ic_aleart_iot" width="60.333332061767578" height="60"/>
+        <image name="ic_aleart_iot" width="44" height="44"/>
         <image name="ic_clock_iot" width="44" height="44"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
