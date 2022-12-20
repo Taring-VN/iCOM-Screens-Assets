@@ -97,7 +97,7 @@ class HomeViewController: BaseVC, MyDataSendingDelegateProtocol {
     }
     
     override func setUpViews() {
-        navigationItem.titleView = setTitleAndSubtitle("QUẢN LÝ THIẾT BỊ", subtitle: "Điều hoà")
+        navigationItem.titleView = setTitleAndSubtitle("QUẢN LÝ THIẾT BỊ", subtitle: String(describing: item.name ?? ""))
         setRightButtonBar()
         setBackButtonBar()
         if #available(iOS 13.0, *) {
