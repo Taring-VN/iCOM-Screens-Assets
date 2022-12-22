@@ -24,12 +24,13 @@ class ControlDeviceVC: BaseVC, ControlDeviceDelegate, ControlDeviceCellDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel.loadListDevices()
         configCollectionView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        viewModel.loadListDevices()
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
