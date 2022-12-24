@@ -26,6 +26,7 @@ final class ControlDeviceViewModel: BaseViewModel {
     }
     
     func filterSection() {
+        arrSection.removeAll()
         arrSection.append("")
         for item in allListDevices {
             if let deviceType = item.deviceType {
@@ -39,6 +40,7 @@ final class ControlDeviceViewModel: BaseViewModel {
     }
     
     func filterItem() {
+        arrItem.removeAll()
         var item = [Items]()
         for value in arrSection {
             for _item in allListDevices {
@@ -62,6 +64,7 @@ extension ControlDeviceViewModel {
     
     func loadListDevices() {
         self.pSLoadingBlockUI.onNext(true)
+        allListDevices.removeAll()
         
         let request = ControlDeviceModel.ListDevice()
         
