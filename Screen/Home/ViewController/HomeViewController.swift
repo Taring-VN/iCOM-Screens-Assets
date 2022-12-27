@@ -33,8 +33,8 @@ class HomeViewController: BaseVC, MyDataSendingDelegateProtocol {
     
     var consumePowerData = String()
     
-    @IBAction func actionSwitch(_ sender: Any) {
-        viewModel.loadOnOffDevice(mac: item.mac ?? "", status: !(item.status ?? true))
+    @IBAction func actionSwitch(_ sender: UISwitch) {
+        viewModel.loadOnOffDevice(mac: item.mac ?? "", status: sender.isOn)
     }
     
     @IBAction func navigateToAleartPower(_ sender: Any) {
